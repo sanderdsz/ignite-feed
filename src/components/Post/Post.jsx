@@ -1,3 +1,4 @@
+import Comment from "../Comment/Comment";
 import styles from "./Post.module.css";
 
 export function Post(props) { 
@@ -16,6 +17,18 @@ export function Post(props) {
       <div className={styles.content}>
         <strong>{props.author}</strong>
         <p>{props.content}</p>
+      </div>
+      <form className={styles.commentForm}>
+        <strong>Leave your feedback</strong>
+        <textarea 
+          placeholder="leave a comment"
+        />
+        <footer>
+          <button type="submit">Comment</button>
+        </footer>
+      </form>
+      <div className={styles.commentList}>
+        <Comment />
       </div>
     </article>
   )
